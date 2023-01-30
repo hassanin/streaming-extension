@@ -1,0 +1,5 @@
+comment = 'hello_world1:  Created by pgx'
+default_version = '@CARGO_VERSION@'
+module_pathname = '$libdir/hello_world1'
+relocatable = false
+superuser = false

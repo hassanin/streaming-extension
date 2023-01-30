@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3'
+services:
+  database:
+    image: "mohamed1:p15" # use latest official postgres version
+    command: "-c wal_level=logical -c shared_preload_libraries='hello_world1.so'"
+    ports:
+      - "5432:5432"
+    env_file:
+      - postgres.env # configure postgres
+    volumes:
+      - postgres-data23:/var/lib/postgresql/data/ # persist data even if container shuts down
+volumes:
+  postgres-data23: null # named volumes can be managed easier using docker-compose
